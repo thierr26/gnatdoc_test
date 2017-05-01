@@ -68,7 +68,8 @@ PATCH
 -----
 
 The patch for the Debian package gnat-gps (6.1.1-1) is stored in the "patch"
-subdirectory.
+subdirectory. This patch has been sent to the Debian Bug Tracking System (bug
+#861616 [5]).
 
 LINKS
 -----
@@ -77,6 +78,7 @@ LINKS
   2: https://www.gnu.org/software/gnat/gnat.html
   3: https://wiki.debian.org/DebianUnstable
   4: https://packages.debian.org/sid/gnat-gps
+  5: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=861616
 
 ==============================================================================
 Author: Thierry Rascle (thierr26@free.fr)
