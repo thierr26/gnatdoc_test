@@ -1,0 +1,10 @@
+with "gnatdoc_test";
+
+project Default is
+
+   for Source_Dirs use ();
+   for Main use GNATdoc_Test'Main;
+
+   package Ide renames GNATdoc_Test.Ide;
+
+end Default;

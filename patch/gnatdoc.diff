@@ -1,0 +1,133 @@
+--- a/gnatdoc/src/gnatdoc-backend-html.adb
++++ b/gnatdoc/src/gnatdoc-backend-html.adb
+@@ -938,12 +938,45 @@
+                declare
+                   Buffer : aliased String := To_String (Get_Src (E));
+                   Code   : JSON_Value;
++                  Line : Positive := LL.Get_Location (E).Line;
++                  Start_Col : Positive;
+ 
+                begin
++                  if Buffer'Length > 0
++                    and then (Get_Kind (E) = E_Procedure
++                    or else Get_Kind (E) = E_Function
++                    or else Get_Kind (E) = E_Entry) then
++                     Start_Col := Buffer'First;
++                     while (Buffer (Start_Col) = ' '
++                       or else Buffer (Start_Col) = ASCII.HT)
++                       and then Start_Col < Buffer'Last loop
++                        Start_Col := Start_Col + 1;
++                     end loop;
++                     if Buffer (Start_Col) /= ' '
++                       and then Buffer (Start_Col) /= ASCII.HT
++                       and then Buffer'Last >= Start_Col + 11
++                       and then (Buffer (Start_Col + 10) = ASCII.LF
++                       or else Buffer (Start_Col + 11) = ASCII.LF) then
++                        if Buffer (Start_Col .. Start_Col + 9)
++                          = "overriding" then
++                           Line := Line - 1;
++                        end if;
++                     end if;
++                     if Buffer (Start_Col) /= ' '
++                       and then Buffer (Start_Col) /= ASCII.HT
++                       and then Buffer'Last >= Start_Col + 15
++                       and then (Buffer (Start_Col + 14) = ASCII.LF
++                       or else Buffer (Start_Col + 15) = ASCII.LF) then
++                        if Buffer (Start_Col .. Start_Col + 13)
++                          = "not overriding" then
++                           Line := Line - 1;
++                        end if;
++                     end if;
++                  end if;
+                   Self.Print_Source_Code
+                     (Tree.File,
+                      Buffer'Unchecked_Access,
+-                     LL.Get_Location (E).Line,
++                     Line,
+                      Printer,
+                      Code);
+                   Prepend (Description, Code);
+--- a/gnatdoc/src/gnatdoc-frontend.adb
++++ b/gnatdoc/src/gnatdoc-frontend.adb
+@@ -71,6 +71,7 @@
+       Tok_Is,
+       Tok_Limited,
+       Tok_New,
++      Tok_Not,
+       Tok_Null,
+       Tok_Overriding,
+       Tok_Others,
+@@ -1287,6 +1288,8 @@
+          Cursor                 : Extended_Cursor.Extended_Cursor;
+          Last_Idx               : Natural := 0;
+          Par_Count              : Natural := 0;
++         Prev_Prev_Token        : Tokens := Tok_Unknown;
++         Prev_Prev_Token_Loc    : Source_Location;
+          Prev_Token             : Tokens := Tok_Unknown;
+          Prev_Token_Loc         : Source_Location;
+          Token                  : Tokens := Tok_Unknown;
+@@ -1340,12 +1343,14 @@
+          procedure Clear_Parser_State is
+             No_Source_Location : constant Source_Location := (0, 0, 0);
+          begin
+-            Last_Idx       := 0;
+-            Par_Count      := 0;
+-            Prev_Token     := Tok_Unknown;
+-            Prev_Token_Loc := No_Source_Location;
+-            Token          := Tok_Unknown;
+-            Token_Loc      := No_Source_Location;
++            Last_Idx            := 0;
++            Par_Count           := 0;
++            Prev_Prev_Token     := Tok_Unknown;
++            Prev_Prev_Token_Loc := No_Source_Location;
++            Prev_Token          := Tok_Unknown;
++            Prev_Token_Loc      := No_Source_Location;
++            Token               := Tok_Unknown;
++            Token_Loc           := No_Source_Location;
+ 
+             Nested_Variants_Count  := 0;
+             In_Compilation_Unit    := False;
+@@ -2982,7 +2987,8 @@
+                         end if;
+                      end;
+ 
+-                  when Tok_Type =>
++                  when Tok_Type |
++                       Tok_Subtype =>
+                      if Prev_Token = Tok_Task
+                        or else Prev_Token = Tok_Protected
+                      then
+@@ -3002,8 +3008,13 @@
+                         Clear_Src;
+ 
+                         if Prev_Token = Tok_Overriding then
+-                           Append_Src
+-                             ("overriding", Prev_Token_Loc.Column);
++                           if Prev_Prev_Token = Tok_Not then
++                              Append_Src
++                                ("not overriding", Prev_Prev_Token_Loc.Column);
++                           else
++                              Append_Src
++                                ("overriding", Prev_Token_Loc.Column);
++                           end if;
+ 
+                            if Prev_Token_Loc.Line = Sloc_Start.Line then
+                               Append_Src (" " & S);
+@@ -3102,6 +3113,8 @@
+                procedure Update_Prev_Known_Token is
+                begin
+                   if Token /= Tok_Unknown then
++                     Prev_Prev_Token := Prev_Token;
++                     Prev_Prev_Token_Loc := Prev_Token_Loc;
+                      Prev_Token := Token;
+                      Prev_Token_Loc := Token_Loc;
+                   end if;
+@@ -4242,6 +4255,8 @@
+                procedure Update_Prev_Known_Token is
+                begin
+                   if Token /= Tok_Unknown then
++                     Prev_Prev_Token := Prev_Token;
++                     Prev_Prev_Token_Loc := Prev_Token_Loc;
+                      Prev_Token := Token;
+                      Prev_Token_Loc := Token_Loc;
+                   end if;

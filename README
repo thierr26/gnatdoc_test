@@ -1,0 +1,84 @@
+GENERAL INFORMATION
+-------------------
+
+This repository contains a very small Ada program the author wrote to test
+GNATdoc [1].
+
+At the time of this writing (2017-05-01), the author uses GNAT [2] and GNATdoc
+under Debian Sid [3] and GNATdoc in Debian Sid is provided in the gnat-gps
+package [4] (version 6.1.1-1).
+
+HOW TO COMPILE THE PROGRAM
+--------------------------
+
+To build the program, and assuming you have cloned the repository to
+~/gnatdoc_test, just open a terminal, change directory to ~/gnatdoc_test and
+issue the following command:
+
+$ make
+
+This creates the executable program ("my_main", in the "bin" subdirectory).
+
+HOW TO INVOKE GNATDOC TO GENERATE THE DOCUMENTATION
+---------------------------------------------------
+
+Just issue the following command:
+
+$ make doc
+
+This generates the documentation in the "generated_doc" subdirectory. Open the
+"generated_doc/index.html" file in a browser to see the generated
+documentation.
+
+HOW TO REMOVE ALL THE FILES CREATED BY THE COMPILER OR GNATDOC
+--------------------------------------------------------------
+
+Just issue the following command (equivalent to re-cloning the repository):
+
+$ make thorough_clean
+
+DOCUMENTATION GENERATED USING DEBIAN PACKAGE gnat-gps (6.1.1-1) UNPATCHED
+-------------------------------------------------------------------------
+
+The documentation generated using the Debian package gnat-gps (6.1.1-1)
+unpatched is stored in the "generated_doc_before_patching" subdirectory.
+
+This documentation (more precisely the documentation for the My_Package
+package provided in the "generated_doc_before_patching/docs/my_package.html"
+file) has the following inaccuracies:
+
+1. The "not overriding" indicators appear as "overriding" indicators.
+
+2. The line numbers shown for the subprogram declarations are wrong (one unit
+   too high) if there is an "overriding" or a "not overriding" indicator on
+   the previous line.
+
+3. The rendering of the declaration of the Count subtype erroneously includes
+   some preceding lines (here the "package My_Package is" line).
+
+DOCUMENTATION GENERATED USING DEBIAN PACKAGE gnat-gps (6.1.1-1) PATCHED
+-----------------------------------------------------------------------
+
+The documentation generated using the Debian package gnat-gps (6.1.1-1)
+patched is stored in the "generated_doc_after_patching" subdirectory.
+
+This documentation does not have the aforementioned inaccuracies.
+
+PATCH
+-----
+
+The patch for the Debian package gnat-gps (6.1.1-1) is stored in the "patch"
+subdirectory.
+
+LINKS
+-----
+
+  1: http://docs.adacore.com/gnatdoc-docs/users_guide/_build/html/gnatdoc.html
+  2: https://www.gnu.org/software/gnat/gnat.html
+  3: https://wiki.debian.org/DebianUnstable
+  4: https://packages.debian.org/sid/gnat-gps
+
+==============================================================================
+Author: Thierry Rascle (thierr26@free.fr)
+
+Licensed under the Unlicense license (see http://unlicense.org).

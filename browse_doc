@@ -1,0 +1,3 @@
+#!/bin/sh
+
+firefox -new-window generated_doc/index.html
