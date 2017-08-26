@@ -1,3 +1,26 @@
+--- a/gnatdoc/resources/html/static/gnatdoc.css
++++ b/gnatdoc/resources/html/static/gnatdoc.css
+@@ -33,9 +33,9 @@
+     font-style: italic;
+ }
+ 
+-.keyword {
++/* .keyword {
+     font-weight: bold;
+-}
++} */
+ 
+ #toc {
+     position: absolute;
+@@ -275,7 +275,7 @@
+ 
+ #body dl {
+     color: #008800;
+-    font-family: Inconsolata, monospace;
++    /* font-family: Inconsolata, monospace; */
+     margin-bottom: 0;
+ }
+ 
 --- a/gnatdoc/src/gnatdoc-backend-html.adb
 +++ b/gnatdoc/src/gnatdoc-backend-html.adb
 @@ -938,12 +938,45 @@

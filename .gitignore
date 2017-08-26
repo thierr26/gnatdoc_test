@@ -1,7 +1,9 @@
 obj
 bin
-gnat-gps_sparse_tree_before_patching
-gnat-gps_sparse_tree_after_patching
+gnat-gps_6.1.1_sparse_tree_before_patching
+gnat-gps_6.1.1_sparse_tree_after_patching
+gnat-gps_6.1.2016_sparse_tree_before_patching
+gnat-gps_6.1.2016_sparse_tree_after_patching
 generated_doc
 auto.cgpr
 gnatinspect.db
