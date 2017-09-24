@@ -33,43 +33,6 @@ GNATdoc.Documentation = {
                   "children": [
                     {
                       "kind": "span",
-                      "cssClass": "keyword",
-                      "text": "package"
-                    },
-                    {
-                      "kind": "span",
-                      "cssClass": "text",
-                      "text": " "
-                    },
-                    {
-                      "kind": "span",
-                      "cssClass": "identifier",
-                      "text": "My_Package"
-                    },
-                    {
-                      "kind": "span",
-                      "cssClass": "text",
-                      "text": " "
-                    },
-                    {
-                      "kind": "span",
-                      "cssClass": "keyword",
-                      "text": "is"
-                    }
-                  ]
-                },
-                {
-                  "kind": "line",
-                  "number": 7,
-                  "children": [
-                  ]
-                },
-                {
-                  "kind": "line",
-                  "number": 8,
-                  "children": [
-                    {
-                      "kind": "span",
                       "cssClass": "text",
                       "text": "   "
                     },
@@ -86,7 +49,8 @@ GNATdoc.Documentation = {
                     {
                       "kind": "span",
                       "cssClass": "identifier",
-                      "text": "Count"
+                      "text": "Count",
+                      "href": "docs/my_package.html#L6C12"
                     },
                     {
                       "kind": "span",
@@ -168,14 +132,136 @@ GNATdoc.Documentation = {
               ]
             }
           ]
-        }
-      ],
-      "label": "Simple types"
-    },
-    {
-      "entities": [
+        },
         {
-          "label": "My_Interface",
+          "label": "Arr",
+          "line": 8,
+          "column": 9,
+          "src": "srcs/my_package.ads.html",
+          "summary": [
+          ],
+          "description": [
+            {
+              "kind": "code",
+              "children": [
+                {
+                  "kind": "line",
+                  "number": 8,
+                  "children": [
+                    {
+                      "kind": "span",
+                      "cssClass": "text",
+                      "text": "   "
+                    },
+                    {
+                      "kind": "span",
+                      "cssClass": "keyword",
+                      "text": "type"
+                    },
+                    {
+                      "kind": "span",
+                      "cssClass": "text",
+                      "text": " "
+                    },
+                    {
+                      "kind": "span",
+                      "cssClass": "identifier",
+                      "text": "Arr",
+                      "href": "docs/my_package.html#L8C9"
+                    },
+                    {
+                      "kind": "span",
+                      "cssClass": "text",
+                      "text": " "
+                    },
+                    {
+                      "kind": "span",
+                      "cssClass": "keyword",
+                      "text": "is"
+                    },
+                    {
+                      "kind": "span",
+                      "cssClass": "text",
+                      "text": " "
+                    },
+                    {
+                      "kind": "span",
+                      "cssClass": "keyword",
+                      "text": "array"
+                    },
+                    {
+                      "kind": "span",
+                      "cssClass": "text",
+                      "text": " "
+                    },
+                    {
+                      "kind": "span",
+                      "cssClass": "identifier",
+                      "text": "("
+                    },
+                    {
+                      "kind": "span",
+                      "cssClass": "number",
+                      "text": "1"
+                    },
+                    {
+                      "kind": "span",
+                      "cssClass": "text",
+                      "text": " "
+                    },
+                    {
+                      "kind": "span",
+                      "cssClass": "identifier",
+                      "text": ".."
+                    },
+                    {
+                      "kind": "span",
+                      "cssClass": "text",
+                      "text": " "
+                    },
+                    {
+                      "kind": "span",
+                      "cssClass": "number",
+                      "text": "3"
+                    },
+                    {
+                      "kind": "span",
+                      "cssClass": "identifier",
+                      "text": ")"
+                    },
+                    {
+                      "kind": "span",
+                      "cssClass": "text",
+                      "text": " "
+                    },
+                    {
+                      "kind": "span",
+                      "cssClass": "keyword",
+                      "text": "of"
+                    },
+                    {
+                      "kind": "span",
+                      "cssClass": "text",
+                      "text": " "
+                    },
+                    {
+                      "kind": "span",
+                      "cssClass": "identifier",
+                      "text": "Natural"
+                    },
+                    {
+                      "kind": "span",
+                      "cssClass": "identifier",
+                      "text": ";"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Enum",
           "line": 10,
           "column": 9,
           "src": "srcs/my_package.ads.html",
@@ -207,8 +293,147 @@ GNATdoc.Documentation = {
                     {
                       "kind": "span",
                       "cssClass": "identifier",
-                      "text": "My_Interface",
+                      "text": "Enum",
                       "href": "docs/my_package.html#L10C9"
+                    },
+                    {
+                      "kind": "span",
+                      "cssClass": "text",
+                      "text": " "
+                    },
+                    {
+                      "kind": "span",
+                      "cssClass": "keyword",
+                      "text": "is"
+                    },
+                    {
+                      "kind": "span",
+                      "cssClass": "text",
+                      "text": " "
+                    },
+                    {
+                      "kind": "span",
+                      "cssClass": "identifier",
+                      "text": "("
+                    },
+                    {
+                      "kind": "span",
+                      "cssClass": "identifier",
+                      "text": "One",
+                      "href": "docs/my_package.html#L10C18"
+                    },
+                    {
+                      "kind": "span",
+                      "cssClass": "identifier",
+                      "text": ","
+                    },
+                    {
+                      "kind": "span",
+                      "cssClass": "text",
+                      "text": " "
+                    },
+                    {
+                      "kind": "span",
+                      "cssClass": "identifier",
+                      "text": "Two",
+                      "href": "docs/my_package.html#L10C23"
+                    },
+                    {
+                      "kind": "span",
+                      "cssClass": "identifier",
+                      "text": ","
+                    },
+                    {
+                      "kind": "span",
+                      "cssClass": "text",
+                      "text": " "
+                    },
+                    {
+                      "kind": "span",
+                      "cssClass": "identifier",
+                      "text": "Three",
+                      "href": "docs/my_package.html#L10C28"
+                    },
+                    {
+                      "kind": "span",
+                      "cssClass": "identifier",
+                      "text": ")"
+                    },
+                    {
+                      "kind": "span",
+                      "cssClass": "identifier",
+                      "text": ";",
+                      "href": "docs/my_package.html#L10C9"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "literals": [
+            {
+              "label": "One",
+              "line": 10,
+              "column": 18,
+              "description": [
+              ]
+            },
+            {
+              "label": "Two",
+              "line": 10,
+              "column": 23,
+              "description": [
+              ]
+            },
+            {
+              "label": "Three",
+              "line": 10,
+              "column": 28,
+              "description": [
+              ]
+            }
+          ]
+        }
+      ],
+      "label": "Simple types"
+    },
+    {
+      "entities": [
+        {
+          "label": "My_Interface",
+          "line": 22,
+          "column": 9,
+          "src": "srcs/my_package.ads.html",
+          "summary": [
+          ],
+          "description": [
+            {
+              "kind": "code",
+              "children": [
+                {
+                  "kind": "line",
+                  "number": 22,
+                  "children": [
+                    {
+                      "kind": "span",
+                      "cssClass": "text",
+                      "text": "   "
+                    },
+                    {
+                      "kind": "span",
+                      "cssClass": "keyword",
+                      "text": "type"
+                    },
+                    {
+                      "kind": "span",
+                      "cssClass": "text",
+                      "text": " "
+                    },
+                    {
+                      "kind": "span",
+                      "cssClass": "identifier",
+                      "text": "My_Interface",
+                      "href": "docs/my_package.html#L22C9"
                     },
                     {
                       "kind": "span",
@@ -243,7 +468,7 @@ GNATdoc.Documentation = {
           "inherited": [
             {
               "label": "My_Implementation",
-              "docHref": "docs/my_package.html#L19C9"
+              "docHref": "docs/my_package.html#L31C9"
             }
           ]
         }
@@ -254,7 +479,7 @@ GNATdoc.Documentation = {
       "entities": [
         {
           "label": "My_Implementation",
-          "line": 19,
+          "line": 31,
           "column": 9,
           "src": "srcs/my_package.ads.html",
           "summary": [
@@ -265,7 +490,7 @@ GNATdoc.Documentation = {
               "children": [
                 {
                   "kind": "line",
-                  "number": 19,
+                  "number": 31,
                   "children": [
                     {
                       "kind": "span",
@@ -286,7 +511,7 @@ GNATdoc.Documentation = {
                       "kind": "span",
                       "cssClass": "identifier",
                       "text": "My_Implementation",
-                      "href": "docs/my_package.html#L19C9"
+                      "href": "docs/my_package.html#L31C9"
                     },
                     {
                       "kind": "span",
@@ -317,7 +542,7 @@ GNATdoc.Documentation = {
                       "kind": "span",
                       "cssClass": "identifier",
                       "text": "My_Interface",
-                      "href": "docs/my_package.html#L10C9"
+                      "href": "docs/my_package.html#L22C9"
                     },
                     {
                       "kind": "span",
@@ -352,7 +577,7 @@ GNATdoc.Documentation = {
           "inherits": [
             {
               "label": "My_Interface",
-              "docHref": "docs/my_package.html#L10C9"
+              "docHref": "docs/my_package.html#L22C9"
             }
           ]
         }
@@ -362,8 +587,36 @@ GNATdoc.Documentation = {
     {
       "entities": [
         {
+          "label": "My_Function",
+          "line": 14,
+          "column": 13,
+          "src": "srcs/my_package.ads.html",
+          "summary": [
+          ],
+          "description": [
+          ],
+          "parameters": [
+            {
+              "label": "A",
+              "line": 14,
+              "column": 26,
+              "type": {
+                "label": "My_Package.Arr",
+                "docHref": "docs/my_package.html#L8C9"
+              },
+              "description": [
+              ]
+            }
+          ]
+        }
+      ],
+      "label": "Subprograms"
+    },
+    {
+      "entities": [
+        {
           "label": "My_Primitive",
-          "line": 13,
+          "line": 25,
           "column": 13,
           "src": "srcs/my_package.ads.html",
           "summary": [
@@ -374,7 +627,7 @@ GNATdoc.Documentation = {
               "children": [
                 {
                   "kind": "line",
-                  "number": 13,
+                  "number": 25,
                   "children": [
                     {
                       "kind": "span",
@@ -390,7 +643,7 @@ GNATdoc.Documentation = {
                 },
                 {
                   "kind": "line",
-                  "number": 14,
+                  "number": 26,
                   "children": [
                     {
                       "kind": "span",
@@ -525,11 +778,11 @@ GNATdoc.Documentation = {
           "parameters": [
             {
               "label": "Obj",
-              "line": 13,
+              "line": 25,
               "column": 27,
               "type": {
                 "label": "My_Package.My_Interface",
-                "docHref": "docs/my_package.html#L10C9"
+                "docHref": "docs/my_package.html#L22C9"
               },
               "description": [
                 {
@@ -537,7 +790,7 @@ GNATdoc.Documentation = {
                   "children": [
                     {
                       "kind": "span",
-                      "text": "My_Interface object. \n"
+                      "text": "My_Interface object.\n"
                     }
                   ]
                 }
@@ -560,7 +813,7 @@ GNATdoc.Documentation = {
         },
         {
           "label": "Create",
-          "line": 21,
+          "line": 33,
           "column": 28,
           "src": "srcs/my_package.ads.html",
           "summary": [
@@ -571,7 +824,7 @@ GNATdoc.Documentation = {
               "children": [
                 {
                   "kind": "line",
-                  "number": 21,
+                  "number": 33,
                   "children": [
                     {
                       "kind": "span",
@@ -602,7 +855,7 @@ GNATdoc.Documentation = {
                       "kind": "span",
                       "cssClass": "identifier",
                       "text": "Create",
-                      "href": "docs/my_package.html#L21C28"
+                      "href": "docs/my_package.html#L33C28"
                     },
                     {
                       "kind": "span",
@@ -623,7 +876,7 @@ GNATdoc.Documentation = {
                       "kind": "span",
                       "cssClass": "identifier",
                       "text": "My_Implementation",
-                      "href": "docs/my_package.html#L35C9"
+                      "href": "docs/my_package.html#L47C9"
                     },
                     {
                       "kind": "span",
@@ -651,7 +904,7 @@ GNATdoc.Documentation = {
         },
         {
           "label": "My_Primitive",
-          "line": 25,
+          "line": 37,
           "column": 13,
           "src": "srcs/my_package.ads.html",
           "summary": [
@@ -662,7 +915,7 @@ GNATdoc.Documentation = {
               "children": [
                 {
                   "kind": "line",
-                  "number": 25,
+                  "number": 37,
                   "children": [
                     {
                       "kind": "span",
@@ -678,7 +931,7 @@ GNATdoc.Documentation = {
                 },
                 {
                   "kind": "line",
-                  "number": 26,
+                  "number": 38,
                   "children": [
                     {
                       "kind": "span",
@@ -793,11 +1046,11 @@ GNATdoc.Documentation = {
           "parameters": [
             {
               "label": "Obj",
-              "line": 25,
+              "line": 37,
               "column": 27,
               "type": {
                 "label": "My_Package.My_Implementation",
-                "docHref": "docs/my_package.html#L19C9"
+                "docHref": "docs/my_package.html#L31C9"
               },
               "description": [
                 {
@@ -805,7 +1058,7 @@ GNATdoc.Documentation = {
                   "children": [
                     {
                       "kind": "span",
-                      "text": "My_Implementation object. \n"
+                      "text": "My_Implementation object.\n"
                     }
                   ]
                 }

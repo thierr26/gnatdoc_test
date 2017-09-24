@@ -3,9 +3,9 @@ GNATdoc.EntitiesCategory = {
   "entities": [
     {
       "label": "My_Interface",
-      "docHref": "docs/my_package.html#L10C9",
+      "docHref": "docs/my_package.html#L22C9",
       "declared": "My_Package",
-      "srcHref": "srcs/my_package.ads.html#L10"
+      "srcHref": "srcs/my_package.ads.html#L22"
     }
   ]
 };

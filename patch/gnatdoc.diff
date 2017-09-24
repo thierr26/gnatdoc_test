@@ -112,7 +112,24 @@
                       Prev_Token := Token;
                       Prev_Token_Loc := Token_Loc;
                    end if;
-@@ -4249,6 +4261,8 @@
+@@ -3211,6 +3223,7 @@
+                            In_Type_Definition := False;
+                            In_Derived_Type_Definition := False;
+                         end if;
++                        In_Aspect_Spec := False;
+                      end if;
+ 
+                when Normal_Text             |
+@@ -3256,7 +3269,7 @@
+                  Extended_Cursor.Entity (Cursor);
+                Loc : General_Location;
+             begin
+-               if No (Next_Entity) then
++               if In_Aspect_Spec or else No (Next_Entity) then
+                   return False;
+                end if;
+ 
+@@ -4249,6 +4262,8 @@
                 procedure Update_Prev_Known_Token is
                 begin
                    if Token /= Tok_Unknown then
@@ -121,33 +138,3 @@
                       Prev_Token := Token;
                       Prev_Token_Loc := Token_Loc;
                    end if;
---- a/gnatdoc/resources/html/static/gnatdoc.css
-+++ b/gnatdoc/resources/html/static/gnatdoc.css
-@@ -33,9 +33,9 @@
-     font-style: italic;
- }
- 
--.keyword {
-+/* .keyword {
-     font-weight: bold;
--}
-+} */
- 
- #toc {
-     position: absolute;
-@@ -275,7 +275,7 @@
- 
- #body dl {
-     color: #008800;
--    font-family: Inconsolata, monospace;
-+    /* font-family: Inconsolata, monospace; */
-     margin-bottom: 0;
- }
- 
-@@ -293,5 +293,5 @@
- 
- p.preformatted {
-     white-space: pre;
--    font-family: monospace;
-+    font-family: Inconsolata, monospace;
- }

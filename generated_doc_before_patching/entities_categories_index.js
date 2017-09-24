@@ -10,5 +10,9 @@ GNATdoc.EntitiesCategoriesIndex = [
   {
     "label": "Tagged Types",
     "href": "entities/tagged_types.html"
+  },
+  {
+    "label": "Subprograms",
+    "href": "entities/subprograms.html"
   }
 ];

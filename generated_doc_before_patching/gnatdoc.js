@@ -82,6 +82,23 @@ GNATdoc.SourceFile = [];
 GNATdoc.SourceFileIndex = [];
 
 /**
+ * Creates HTML element and sets its 'className' property.
+ *
+ * @param {String} tagName  The tag name of created element
+ * @param {String} cssClass  Name of CSS class
+ */
+
+function createElementAndSetClass(tagName, cssClass) {
+    var element = document.createElement(tagName);
+
+    if (cssClass !== undefined) {
+        element.className = cssClass;
+    }
+
+    return element;
+}
+
+/**
  * ???
  *
  * @param {Element} root  The element to which we add the documentation.
@@ -121,17 +138,17 @@ function buildText(root, data) {
                break;
 
            case GNATdoc.EntityKind.PARAGRAPH:
-               element = document.createElement('p');
+               element = createElementAndSetClass('p', data[index].cssClass);
                buildText(element, data[index].children);
                break;
 
            case GNATdoc.EntityKind.UL:
-               element = document.createElement('ul');
+               element = createElementAndSetClass('ul', data[index].cssClass);
                buildText(element, data[index].children);
                break;
 
            case GNATdoc.EntityKind.LI:
-               element = document.createElement('li');
+               element = createElementAndSetClass('li', data[index].cssClass);
                buildText(element, data[index].children);
                break;
 
@@ -140,7 +157,14 @@ function buildText(root, data) {
 
                if (data[index].href !== undefined) {
                    var a = document.createElement('a');
-                   a.href = '../' + data[index].href;
+                   var isAbsoluteURL = new RegExp('^(?:[a-z]+:)?//', 'i');
+
+                   //  When URL is absolute use it as is, otherwise apply
+                   //  correction to point to expected location.
+                   a.href =
+                     isAbsoluteURL.test(data[index].href) ?
+                                          data[index].href :
+                                          '../' + data[index].href;
                    a.appendChild(document.createTextNode(data[index].text));
                    element.appendChild(a);
 
