@@ -2,12 +2,17 @@ package body My_Package is
 
    ----------------------------------------------------------------------------
 
+   function My_Function (A : Arr) return Boolean
+     is (for all Z in A'Range => A(Z) = A(A'First));
+
+   ----------------------------------------------------------------------------
+
    not overriding
    function Create return My_Implementation is
 
    begin
 
-      return (Others => <>);
+      return (others => <>);
 
    end Create;
 

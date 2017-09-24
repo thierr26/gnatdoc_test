@@ -5,6 +5,18 @@ package My_Package is
 
    subtype Count is Long_Long_Integer range 0 .. Long_Long_Integer'Last;
 
+   type Arr is array (1 .. 3) of Natural;
+
+   type Enum is (One, Two, Three);
+
+   ----------------------------------------------------------------------------
+
+   function My_Function (A : Arr) return Boolean
+     with Post =>
+            My_Function'Result = (for all Z in A'Range => A(Z) = A(A'First));
+   --  @param A 3 elements array.
+   --  @return True if all 3 elements are equal, False otherwise.
+
    ----------------------------------------------------------------------------
 
    type My_Interface is interface;
