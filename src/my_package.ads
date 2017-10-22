@@ -1,7 +1,7 @@
+package My_Package is
 --  @summary
 --  Test package.
 --
-package My_Package is
 
    subtype Count is Long_Long_Integer range 0 .. Long_Long_Integer'Last;
 
