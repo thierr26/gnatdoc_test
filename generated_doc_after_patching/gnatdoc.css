@@ -33,9 +33,9 @@ td {
     font-style: italic;
 }
 
-/* .keyword {
+.keyword {
     font-weight: bold;
-} */
+}
 
 #toc {
     position: absolute;
@@ -275,7 +275,7 @@ h2 {
 
 #body dl {
     color: #008800;
-    /* font-family: Inconsolata, monospace; */
+    font-family: Inconsolata, monospace;
     margin-bottom: 0;
 }
 
@@ -293,5 +293,5 @@ h2 {
 
 p.preformatted {
     white-space: pre;
-    font-family: Inconsolata, monospace;
+    font-family: Inconsolata;
 }

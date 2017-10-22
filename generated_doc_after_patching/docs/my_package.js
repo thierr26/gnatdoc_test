@@ -201,8 +201,18 @@ GNATdoc.Documentation = {
                     },
                     {
                       "kind": "span",
-                      "cssClass": "number",
-                      "text": "1"
+                      "cssClass": "identifier",
+                      "text": "Positive"
+                    },
+                    {
+                      "kind": "span",
+                      "cssClass": "text",
+                      "text": " "
+                    },
+                    {
+                      "kind": "span",
+                      "cssClass": "keyword",
+                      "text": "range"
                     },
                     {
                       "kind": "span",
@@ -212,17 +222,7 @@ GNATdoc.Documentation = {
                     {
                       "kind": "span",
                       "cssClass": "identifier",
-                      "text": ".."
-                    },
-                    {
-                      "kind": "span",
-                      "cssClass": "text",
-                      "text": " "
-                    },
-                    {
-                      "kind": "span",
-                      "cssClass": "number",
-                      "text": "3"
+                      "text": "<>"
                     },
                     {
                       "kind": "span",
@@ -771,7 +771,7 @@ GNATdoc.Documentation = {
                   "children": [
                     {
                       "kind": "span",
-                      "text": "3 elements array.\n"
+                      "text": "An array.\n"
                     }
                   ]
                 }
@@ -785,7 +785,7 @@ GNATdoc.Documentation = {
                 "children": [
                   {
                     "kind": "span",
-                    "text": "True if all 3 elements are equal, False otherwise.\n"
+                    "text": "True if all array elements are equal, False otherwise.\n"
                   }
                 ]
               }

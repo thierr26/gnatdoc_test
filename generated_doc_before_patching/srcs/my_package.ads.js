@@ -7,39 +7,6 @@ GNATdoc.SourceFile = {
       "children": [
         {
           "kind": "span",
-          "cssClass": "comment",
-          "text": "--  @summary"
-        }
-      ]
-    },
-    {
-      "kind": "line",
-      "number": 2,
-      "children": [
-        {
-          "kind": "span",
-          "cssClass": "comment",
-          "text": "--  Test package."
-        }
-      ]
-    },
-    {
-      "kind": "line",
-      "number": 3,
-      "children": [
-        {
-          "kind": "span",
-          "cssClass": "comment",
-          "text": "--"
-        }
-      ]
-    },
-    {
-      "kind": "line",
-      "number": 4,
-      "children": [
-        {
-          "kind": "span",
           "cssClass": "keyword",
           "text": "package"
         },
@@ -52,7 +19,7 @@ GNATdoc.SourceFile = {
           "kind": "span",
           "cssClass": "identifier",
           "text": "My_Package",
-          "href": "docs/my_package.html#L4C9"
+          "href": "docs/my_package.html#L1C9"
         },
         {
           "kind": "span",
@@ -63,6 +30,39 @@ GNATdoc.SourceFile = {
           "kind": "span",
           "cssClass": "keyword",
           "text": "is"
+        }
+      ]
+    },
+    {
+      "kind": "line",
+      "number": 2,
+      "children": [
+        {
+          "kind": "span",
+          "cssClass": "comment",
+          "text": "--  @summary"
+        }
+      ]
+    },
+    {
+      "kind": "line",
+      "number": 3,
+      "children": [
+        {
+          "kind": "span",
+          "cssClass": "comment",
+          "text": "--  Test package."
+        }
+      ]
+    },
+    {
+      "kind": "line",
+      "number": 4,
+      "children": [
+        {
+          "kind": "span",
+          "cssClass": "comment",
+          "text": "--"
         }
       ]
     },
@@ -237,8 +237,18 @@ GNATdoc.SourceFile = {
         },
         {
           "kind": "span",
-          "cssClass": "number",
-          "text": "1"
+          "cssClass": "identifier",
+          "text": "Positive"
+        },
+        {
+          "kind": "span",
+          "cssClass": "text",
+          "text": " "
+        },
+        {
+          "kind": "span",
+          "cssClass": "keyword",
+          "text": "range"
         },
         {
           "kind": "span",
@@ -248,17 +258,7 @@ GNATdoc.SourceFile = {
         {
           "kind": "span",
           "cssClass": "identifier",
-          "text": ".."
-        },
-        {
-          "kind": "span",
-          "cssClass": "text",
-          "text": " "
-        },
-        {
-          "kind": "span",
-          "cssClass": "number",
-          "text": "3"
+          "text": "<>"
         },
         {
           "kind": "span",
@@ -590,7 +590,7 @@ GNATdoc.SourceFile = {
         {
           "kind": "span",
           "cssClass": "comment",
-          "text": "--  @param A 3 elements array."
+          "text": "--  @param An array."
         }
       ]
     },
@@ -606,7 +606,7 @@ GNATdoc.SourceFile = {
         {
           "kind": "span",
           "cssClass": "comment",
-          "text": "--  @return True if all 3 elements are equal, False otherwise."
+          "text": "--  @return True if all array elements are equal, False otherwise."
         }
       ]
     },

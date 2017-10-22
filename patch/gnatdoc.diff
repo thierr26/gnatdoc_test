@@ -47,6 +47,14 @@
                       Printer,
                       Code);
                    Prepend (Description, Code);
+@@ -1331,6 +1364,7 @@
+ 
+    begin
+       while Get_Kind (Parent) /= E_Package
++        and then Get_Kind (Parent) /= E_Generic_Package
+         and then Get_Scope (Parent) /= null
+       loop
+          Parent := Get_Scope (Parent);
 --- a/gnatdoc/src/gnatdoc-frontend.adb
 +++ b/gnatdoc/src/gnatdoc-frontend.adb
 @@ -64,6 +64,7 @@
@@ -120,7 +128,17 @@
                       end if;
  
                 when Normal_Text             |
-@@ -3256,7 +3269,7 @@
+@@ -3244,7 +3257,8 @@
+                   --  Include access types to handle the formals of access to
+                   --  subprograms
+                  or else Get_Kind (E) = E_Access_Type
+-                 or else Get_Kind (E) = E_Enumeration_Type;
++                 or else (Get_Kind (E) = E_Enumeration_Type
++                   and then not Is_Generic_Formal (E));
+             end Has_Scope;
+ 
+             --------------------
+@@ -3256,7 +3270,7 @@
                   Extended_Cursor.Entity (Cursor);
                 Loc : General_Location;
              begin
@@ -129,7 +147,7 @@
                    return False;
                 end if;
  
-@@ -4249,6 +4262,8 @@
+@@ -4249,6 +4263,8 @@
                 procedure Update_Prev_Known_Token is
                 begin
                    if Token /= Tok_Unknown then
